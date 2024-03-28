@@ -62,6 +62,7 @@ struct SEG {
         update(1, 1, n, x, v);
     }
     int query(int sl, int sr) {
+        if (sl > sr) swap(sl, sr);
         return query(1, 1, n, sl, sr);
     }
 };
