@@ -1,2 +1,2 @@
-# DSU
-Disjoint-set data structure
+# CODE
+code
