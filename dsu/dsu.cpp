@@ -10,7 +10,6 @@ struct STRUCT_DSU {
             sz[i] = 1;
         }
     }
-
     int find(int x) {
         if (x == f[x]) return x;
         f[x] = find(f[x]);
@@ -18,11 +17,14 @@ struct STRUCT_DSU {
     }
 
     void merge(int x, int y) {
-        int fx = find(x), fy = find(y);
-        if (fx == fy) return;
+        x = find(x), y = find(y);
+        if (x == y) return;
         if (sz[x] < sz[y])
             swap(x, y);
         sz[x] += sz[y];
         f[y] = x;
+    }
+    bool same(int a, int b) {
+        return (find(a) == find(b));
     }
 };
